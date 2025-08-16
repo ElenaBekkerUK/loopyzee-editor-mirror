@@ -1,0 +1,131 @@
+/* src/styles/globals.css */
+
+/* 1. Box sizing и базовые ресеты */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-feature-settings: "liga", "kern";
+}
+
+/* 2. Медиа и изображения */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* 3. Формы */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+button:disabled,
+[disabled] {
+  cursor: not-allowed;
+}
+
+/* 4. Ссылки */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 5. Списки */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 6. Заголовки и параграфы */
+h1, h2, h3, h4, h5, h6,
+p {
+  margin: 0;
+  font-weight: inherit;
+}
+
+/* 7. Класс .sr-only для доступности */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 8. Поддержка тёмной темы через class="dark" */
+:root.dark {
+  color-scheme: dark;
+}
+
+/* 9. Уважение системных настроек prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 10. Единый стиль для фокуса по токенам UI Kit */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent), 0 0 0 4px var(--bg);
+  border-radius: var(--radius-md);
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+/* 11. Фокус при состоянии ошибки (data-invalid) */
+button[data-invalid]:focus-visible,
+a[data-invalid]:focus-visible,
+input[data-invalid]:focus-visible,
+select[data-invalid]:focus-visible,
+textarea[data-invalid]:focus-visible,
+[tabindex][data-invalid]:focus-visible {
+  box-shadow: 0 0 0 2px var(--danger), 0 0 0 4px var(--bg);
+}

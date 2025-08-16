@@ -1,0 +1,3 @@
+Source: ElenaBekkerUK/loopyzee-editor
+Commit: 2ae6687
+Built: 2025-08-16 19:46:10Z
